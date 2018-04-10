@@ -1,0 +1,3 @@
+Lesser2Greater
+
+A simple Chrome extension that redirects links from LessWrong to GreaterWrong. Thanks to kronusaturn for making GreaterWrong URLs identical for LessWrong URLs, except for the domain.
