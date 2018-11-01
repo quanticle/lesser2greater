@@ -1,9 +1,0 @@
-* Lesser2Greater
-
-  A simple Chrome extension that redirects links from LessWrong to GreaterWrong. Thanks to kronusaturn for making GreaterWrong URLs identical for LessWrong URLs, except for the domain.
-
-** To install:
-   1. Clone this repo
-   2. Go to Chrome Menu ~->~ More Tools ~->~ Extensions
-   3. Turn on the "Developer Mode" toggle
-   4. Click "Load Unpacked" and select the directory that you cloned this extension into

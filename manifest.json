@@ -1,11 +1,10 @@
 {
     "name": "Lesser2Greater",
-    "version": "1.0",
+    "version": "1.1",
     "description": "Rewrite Less[er]Wrong links to point to GreaterWrong",
     "manifest_version": 2,
     "background": {
-        "scripts": ["background.js"],
-        "persistent": false
+        "scripts": ["background.js"]
     },
-    "permissions": ["webNavigation"]
+    "permissions": ["webNavigation", "tabs"]
 }
