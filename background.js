@@ -7,5 +7,7 @@ browser.webNavigation.onBeforeNavigate.addListener(function(e) {
     console.log("Redirecting to " + newUrl);
     browser.tabs.update(e.tabId, {url: newUrl});
 
-}, {url: [{hostSuffix: 'lesserwrong.com'},
-          {hostSuffix: 'lesswrong.com'}]});
+}, {url: [{hostEquals: 'lesserwrong.com'},
+          {hostEquals: 'lesswrong.com'},
+          {hostEquals: 'www.lesserwrong.com'},
+          {hostEquals: 'www.lesswrong.com'}]});
