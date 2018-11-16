@@ -3,9 +3,15 @@
 A simple Firefox extension that redirects LessWrong links to GreaterWrong.
 
 ## To install:
+
+### Firefox
 * Download the latest [release](https://github.com/quanticle/lesser2greater/releases)
 * Launch Firefox
 * Hit `Ctrl-O` and open the downloaded `xpi` file
+
+### Chrome
+* Go to the [download link](https://chrome.google.com/webstore/detail/algkabaplemhhpegejhmpmkhpofgpbgg/)
+* Click "Add To Chrome"
 
 ## Development Setup:
 * Go to the [Mozilla Add-ons site](https://addons.mozilla.org)
