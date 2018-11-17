@@ -1,6 +1,6 @@
 # Lesser2Greater
 
-A simple Firefox extension that redirects LessWrong links to GreaterWrong.
+A simple Firefox/Chrome extension that redirects LessWrong links to GreaterWrong.
 
 ## To install:
 
