@@ -1,13 +1,24 @@
-chrome.webNavigation.onBeforeNavigate.addListener(function(e) {
-    console.log("Attempted to navigate to a lesswrong URL");
+let checkUrl = true;
+chrome.webNavigation.onBeforeNavigate.addListener(async function(e) {
     let originalUrl = e.url;
-    console.log("Original URL: " + originalUrl);
     let replaceRe = /(.*)(less(?:er)?wrong)(.*)/;
-    newUrl = originalUrl.replace(replaceRe, '$1greaterwrong$3');
-    console.log("Redirecting to " + newUrl);
-    chrome.tabs.update(e.tabId, {url: newUrl});
+    let newUrl = originalUrl.replace(replaceRe, '$1greaterwrong$3');
+    if(checkUrl) {
+        try {
+            let response = await fetch(newUrl, {method: "HEAD"});
 
-}, {url: [{hostEquals: 'lesserwrong.com'},
-          {hostEquals: 'lesswrong.com'},
-          {hostEquals: 'www.lesserwrong.com'},
-          {hostEquals: 'www.lesswrong.com'}]});
+            if(!response.ok){
+                console.log("GreaterWrong doesn't support " + newUrl + ". Received status: " + response.status);
+            }
+            else {
+                chrome.tabs.update(e.tabId, {url: newUrl});
+            }
+            
+        }
+        catch(err) {
+            console.log("GreaterWrong doesn't support " + newUrl + ". Received error: " + err.toString());
+
+        }
+    }
+}, {url: [{hostContains: '.lesserwrong.com'},
+          {hostContains: 'lesswrong.com'}]});
