@@ -1,6 +1,6 @@
 {
     "name": "Lesser2Greater",
-    "version": "2.0",
+    "version": "3.0",
     "description": "Rewrite Less[er]Wrong links to point to GreaterWrong",
     "manifest_version": 2,
     "background": {
@@ -9,6 +9,7 @@
     "permissions": [
         "*://*.lesswrong.com/*",
         "*://*.greaterwrong.com/*",
+        "*://*.forum.effectivealtruism.org/*",
         "webNavigation", 
         "tabs"]
 }
