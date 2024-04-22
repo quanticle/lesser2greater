@@ -1,15 +1,17 @@
 {
-    "name": "Lesser2Greater",
-    "version": "3.0",
-    "description": "Rewrite Less[er]Wrong links to point to GreaterWrong",
-    "manifest_version": 2,
-    "background": {
-        "scripts": ["background.js"]
-    },
-    "permissions": [
-        "*://*.lesswrong.com/*",
-        "*://*.greaterwrong.com/*",
-        "*://*.forum.effectivealtruism.org/*",
-        "webNavigation", 
-        "tabs"]
+  "name": "Lesser2Greater",
+  "version": "4.0",
+  "description": "Rewrite Less[er]Wrong links to point to GreaterWrong, also handling EA Forum, Alignment Forum and Arbital.",
+  "manifest_version": 2,
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+    "*://*.lesswrong.com/*",
+    "*://*.greaterwrong.com/*",
+    "*://*.forum.effectivealtruism.org/*",
+    "*://*.alignmentforum.org/*",
+    "*://*.arbital.com/*",
+    "webNavigation",
+    "tabs"]
 }
