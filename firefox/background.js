@@ -6,7 +6,8 @@ browser.webNavigation.onBeforeNavigate.addListener(async function (e) {
     [/alignmentforum\.org\/posts\/(.*)/, 'greaterwrong.com/posts/$1'],
     [/alignmentforum\.org\/s\/(.*)/, 'greaterwrong.com/s/$1'],
     [/alignmentforum\.org\/?/, 'greaterwrong.com/index?view=alignment-forum'],
-    [/arbital\.com(.*)/, 'arbital.greaterwrong.com$1']
+    [/arbital\.com(.*)/, 'arbital.greaterwrong.com$1'],
+    [/progressforum\.org(.*)/, 'pf.greaterwrong.com$1']
   ];
   let newUrl = originalUrl;
   replaceRePairs.forEach((pair) => {
@@ -16,23 +17,13 @@ browser.webNavigation.onBeforeNavigate.addListener(async function (e) {
     }
   });
   if (newUrl !== originalUrl) {
-    try {
-      let response = await fetch(newUrl, { method: "HEAD" });
-      if (!response.ok) {
-        console.log("GreaterWrong doesn't support " + newUrl + ". Received status: " + response.status);
-      }
-      else {
-        browser.tabs.update(e.tabId, { url: newUrl });
-      }
-    }
-    catch (err) {
-      console.log("GreaterWrong doesn't support " + newUrl + ". Received error: " + err.toString());
-    }
+    browser.tabs.update(e.tabId, { url: newUrl });
   }
 }, {
   url: [{ hostContains: '.lesserwrong.com' },
         { hostContains: 'lesswrong.com' },
         { hostContains: 'forum.effectivealtruism.org' },
         { hostContains: 'alignmentforum.org' },
-        { hostContains: 'arbital.com' }]
+        { hostContains: 'arbital.com' },
+        { hostContains: 'progressforum.org' }]
 });

@@ -1,6 +1,6 @@
 {
   "name": "Lesser2Greater",
-  "version": "4.0",
+  "version": "5.0",
   "description": "Rewrite Less[er]Wrong links to point to GreaterWrong, also handling EA Forum, Alignment Forum and Arbital.",
   "manifest_version": 2,
   "background": {
@@ -12,6 +12,7 @@
     "*://*.forum.effectivealtruism.org/*",
     "*://*.alignmentforum.org/*",
     "*://*.arbital.com/*",
+    "*://*.progressforum.com/*",
     "webNavigation",
     "tabs"]
 }
